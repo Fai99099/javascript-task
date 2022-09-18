@@ -9,14 +9,14 @@ function showHidFun() {
     yButt.textContent = "show info";
   }
 }
-var formLabels = document.getElementsByTagName("label");
 function validation() {
   var valid = true;
+  var formLabels = document.getElementsByTagName("label");
   var firstname = document.getElementById("first-name").value;
   var lastname = document.getElementById("last-name").value;
   var phone = document.getElementById("exampleInputPhone").value;
   var email = document.getElementById("exampleInputEmail1").value;
-  var textarea = document.getElementById("text-area").value;
+  var textarea = document.getElementById("txet-area").value;
   if (firstname == "") {
     formLabels[0].innerHTML = "First Name: * [Required]";
     formLabels[0].style.color = "red";
@@ -81,20 +81,8 @@ function validation() {
     formLabels[5].style.color = "green";
     valid = valid ? true : false;
   }
-    return valid;
-}
-function clear2(){
- var myLabels=new Array();
- myLabels[0]="First Name: " 
- myLabels[1]="Last Name: "
- myLabels[2]="Phone: " 
- myLabels[3]="Email: "
- myLabels[4]="Things you liked?" 
- myLabels[5]="Write comments to improve my site: " 
- for(var i=0; i<myLabels.length;i++){
-  formLabels[i].innerHTML=myLabels[i];
-  formLabels[i].style.color="black";
-}
+
+  return valid;
 }
 function loopFun() {
   let day;

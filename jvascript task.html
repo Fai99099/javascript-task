@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://127.0.0.1:5500/index.html?comments%3A=++Enter+comments+here...%0D%0A++ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./jvascript task_files/javascript.js.download"></script>
+  <link rel="stylesheet" href="./jvascript task_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>jvascript task</title>
+</head>
+
+<body style="background: rgb(190, 181, 181) no-repeat; background-size: cover">
+  <h5><a name="top"></a></h5>
+  <a href="http://127.0.0.1:5500/index.html#down">Go to the Down</a>
+
+  <hr>
+
+  <h1 style="
+        text-align: center;
+        color: rgb(255, 0, 136);
+        font-family: Cambria, Cochin, Georgia, Times, &#39;Times New Roman&#39;, serif;
+      ">
+    Welcome To My Website
+  </h1>
+
+  <hr>
+  <div style="
+        width: 350px;
+        padding: 50px;
+        text-align: center;
+        margin: auto;
+        margin-top: -6%;
+      ">
+    <button id="butt" onclick="showHidFun()" style="vertical-align: top">
+      hide info
+    </button>
+
+    <div id="showHidDIV" style="
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: rgba(250, 174, 174, 0.4);
+          margin-top: 3%;
+        ">
+      This site is experimental to use javascript
+    </div>
+  </div>
+  <div style="
+        width: 400px;
+        background: rgba(71, 68, 68, 0.4);
+        padding: 2px;
+        text-align: center;
+        margin: auto;
+        margin-top: -4%;
+      ">
+    <p>Please fill out this form to help me improve my site.</p>
+  </div>
+
+  <div id="formDiv" style="
+        width: 450px;
+        background: rgba(137, 126, 126, 0.4);
+        padding: 40px;
+        text-align: center;
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+      ">
+    <form onsubmit="return validation()" method="posts" id="form">
+      <div class="row">
+        <div class="col">
+          <label>First Name:</label>
+          <input id="first-name" type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <label>Last Name:</label>
+          <input id="last-name" type="text" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+      <br>
+
+      <label>Phone:</label>
+      <input type="text" class="form-control" id="exampleInputPhone" placeholder="Enter phone">
+      <br>
+
+      <label>Email address:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+      <br>
+
+      <div class="checkboxx" style="align-items: center">
+        <label>Things you liked?</label>
+        <br>
+        <input type="checkbox" id="deasign">Site deasign<br>
+        <input type="checkbox" id="colorfull">Colorfull<br>
+        <input type="checkbox" id="ease">Ease of use<br><br>
+      </div>
+
+      <div style="align-items: center">
+        <label>Write comments to improve my site:</label><br>
+        <textarea id="txet-area" name="comments:" rows="6" cols="30">  Enter comments here...
+  </textarea>
+      </div>
+
+      <hr><div>
+<input type="submit" value="submit">
+<input type="reset" value="clear" onclick="clear2();">
+      </div><br><br>
+    </form>
+    <button id="arrayPrint" style="
+          align-items: center;
+          background-color: rgb(186, 186, 186);
+          border: 10px;
+          padding: 3%;
+        " onclick="loopFun()">
+      view day
+    </button>
+  </div>
+
+  <h5><a name="down"></a></h5>
+  <a href="http://127.0.0.1:5500/index.html#top">Go to the Top</a>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
