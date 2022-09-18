@@ -81,6 +81,17 @@ function validation() {
     formLabels[5].style.color = "green";
     valid = valid ? true : false;
   }
+  var radio1=document.forms["myform"]["content"];
+  if(radio1[0].checked==false&&radio1[1].checked==false){
+    formLabels[4].innerHTML = "Things you liked? * [Required]";
+    formLabels[4].style.color = "red";
+    valid = false;
+  }
+  else{
+    formLabels[4].innerHTML = "Things you liked? [Done]";
+    formLabels[4].style.color = "green";
+    valid = valid ? true : false;
+  }
     return valid;
 }
 function clear2(){
