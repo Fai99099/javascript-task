@@ -97,7 +97,7 @@ function validation() {
       valid = valid ? true : false;
     }
   } catch (err) {
-    alert(err.message);
+    alert("The validation unsuccessful: "+err.message);
   }
   return valid;
 }
