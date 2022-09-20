@@ -65,6 +65,7 @@ function validation() {
       formLabels[3].style.color = "red";
       valid = false;
     } else if (!reg.test(email)) {
+      alert("fai");
       formLabels[3].innerHTML = "Email: * [Incorrect Email]";
       formLabels[3].style.color = "red";
       valid = false;
@@ -82,7 +83,7 @@ function validation() {
       formLabels[5].style.color = "green";
       valid = valid ? true : false;
     }
-    var radio1 = document.forms["myform"]["content"];
+    var radio1 = document.forms["myform"]["Things you liked?"];
     if (
       radio1[0].checked == false &&
       radio1[1].checked == false &&
