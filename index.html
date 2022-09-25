@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="javascript.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>jvascript task</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="javascript.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <title>jvascript task</title>
-</head>
+  <body
+    style="background: rgb(190, 181, 181) no-repeat; background-size: cover"
+  >
+    <h5><a name="top"></a></h5>
+    <a href="index.html#down">Go to the Down</a>
 
-<body style="background: rgb(190, 181, 181) no-repeat; background-size: cover">
-  <h5><a name="top"></a></h5>
-  <a href="index.html#down">Go to the Down</a>
+    <hr />
 
-  <hr />
-
-  <h1 style="
+    <h1
+      style="
         text-align: center;
         color: rgb(255, 0, 136);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      ">
-    Welcome To My Website
-  </h1>
+      "
+    >
+      Welcome To My Website
+    </h1>
 
-  <hr />
-  <div style="
+    <hr />
+    <div
+      style="
         width: 350px;
         padding: 50px;
         text-align: center;
         margin: auto;
         margin-top: -3%;
-      ">
-    <button id="butt" onclick="showHidFun()" style="vertical-align: top">
-      hide info
-    </button>
+      "
+    >
+      <button id="butt" onclick="showHidFun()" style="vertical-align: top">
+        hide info
+      </button>
 
-    <div id="showHidDIV" style="
+      <div
+        id="showHidDIV"
+        style="
           width: 100%;
-          padding: 50px ;
+          padding: 50px;
           text-align: center;
           background-color: rgba(250, 174, 174, 0.4);
           margin-top: -6%;
-        ">
-      This site is experimental to use javascript
+        "
+      >
+        This site is experimental to use javascript
+      </div>
     </div>
-  </div>
-  <div style="
+    <div
+      id="divP"
+      style="
         width: 400px;
         background: rgba(71, 68, 68, 0.4);
         padding: 2px;
         text-align: center;
         margin: auto;
         margin-top: -2%;
-      ">
-    <p>Please fill out this form to help me improve my site.</p>
-  </div>
+      "
+    >
+      <p>Please fill out this form to help me improve my site.</p>
+    </div>
 
-  <div id="formDiv" style="
+    <div
+      id="formDiv"
+      style="
         width: 450px;
         background: rgba(137, 126, 126, 0.4);
         padding: 40px;
@@ -66,58 +83,173 @@
         margin: auto;
         margin-top: 3%;
         margin-bottom: 3%;
-      ">
-    <form action="results.html"onsubmit="return validation()" method="get" id="form" name="myform">
-      <div class="row">
-        <div class="col">
-          <label>First Name:</label>
-          <input name="First Name" id="first-name" type="text" class="form-control" placeholder="First name" />
+      "
+    >
+      <form method="POST" id="form" name="myform">
+        <div class="row">
+          <div class="col">
+            <label id="labelFN">First Name:</label>
+            <input
+              name="FirstName"
+              id="first_name"
+              type="text"
+              class="form-control"
+              placeholder="First name"
+            />
+          </div>
+          <div class="col">
+            <label id="labelLN">Last Name:</label>
+            <input
+              name="LastName"
+              id="last_name"
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+            />
+          </div>
         </div>
-        <div class="col">
-          <label>Last Name:</label>
-          <input name="Last Name" id="last-name" type="text" class="form-control" placeholder="Last name" />
+        <br />
+
+        <label id="labelPhone">Phone:</label>
+        <input
+          name="Phone"
+          type="text"
+          class="form-control"
+          id="exampleInputPhone"
+          placeholder="Enter phone"
+        />
+        <br />
+
+        <label id="labelMail">Email address:</label>
+        <input
+          name="Email"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Example@domin"
+        />
+
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+
+        <br />
+
+        <div style="align-items: center">
+          <label id="labelLiked">Things you liked?</label><br />
+          <input
+          class="messageCheckbox"
+            type="checkbox"
+            name="Things you liked?"
+            value="Site deasign"
+          />Site deasign<br />
+          <input
+          class="messageCheckbox"
+            type="checkbox"
+            name="Things you liked?"
+            value="Colorfull"
+          />Colorfull<br />
+          <input
+          class="messageCheckbox"
+            type="checkbox"
+            name="Things you liked?"
+            value="Ease of use"
+          />Ease of use<br /><br />
         </div>
+
+        <div style="align-items: center">
+          <label id="labelComments">Write comments to improve my site:</label
+          ><br />
+          <textarea
+            id="text_area"
+            name="comments"
+            rows="6"
+            cols="30"
+          ></textarea>
+        </div>
+
+        <hr />
+        <div>
+          <input type="submit" value="submit" />
+          <input type="reset" value="clear" onclick="clear2();" />
+        </div>
+
+        <br /><br />
+      </form>
+
+      <div id="results" style="display: none">
+        <h2>The Result of your Form</h2>
+        <table style="width: 100%">
+          <tr>
+            <th class="t1">First Name</th>
+            <td><span id="first"></span></td>
+          </tr>
+          <tr>
+            <th class="t1">Last Name</th>
+            <td><span id="last"></span></td>
+          </tr>
+          <tr>
+            <th class="t1">Phone</th>
+            <td><span id="phone1"></span></td>
+          </tr>
+          <tr>
+            <th class="t1">Email</th>
+            <td><span id="email1"></span></td>
+          </tr>
+          <tr>
+            <th class="t1">Things you liked?</th>
+            <td><span id="things"></span></td>
+          </tr>
+          <tr>
+            <th class="t1">Comments</th>
+            <td><span id="nots"></span></td>
+          </tr>
+        </table>
       </div>
-      <br />
+    </div>
 
-      <label>Phone:</label>
-      <input name="Phone" type="text" class="form-control" id="exampleInputPhone" placeholder="Enter phone" />
-      <br>
+    <h5><a name="down"></a></h5>
+    <a href="index.html#top">Go to the Top</a>
 
-      <label>Email address:</label>
-      <input name="Email" type="email" class="form-control" id="exampleInputEmail1" 
-        placeholder="Example@domin" />
-        
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
-      <br />
-
-      <div style="align-items: center">
-        <label>Things you liked?</label><br>
-        <input type="checkbox" name="Things you liked?" value="Site deasign" />Site deasign<br />
-        <input type="checkbox" name="Things you liked?" value="Colorfull"/>Colorfull<br />
-        <input type="checkbox" name="Things you liked?" value="Ease of use"/>Ease of use<br /><br />
-      </div>
-
-      <div style="align-items: center">
-        <label>Write comments to improve my site:</label><br />
-        <textarea id="text-area" name="comments" rows="6" cols="30"></textarea>
-      </div>
-
-      <hr />
-      <div>
-        <input type="submit" value="submit">
-        <input type="reset" value="clear" onclick="clear2();">
-      </div>
-      
-      
-      <br /><br />
-    </form>
-
-  </div>
-
-  <h5><a name="down"></a></h5>
-  <a href="index.html#top">Go to the Top</a>
-</body>
-
+    <script>
+      const ContactForm = document.getElementById("form");
+      const divP = document.getElementById("divP");
+      const resultList = document.getElementById("results");
+      const first = document.getElementById("first");
+      const last = document.getElementById("last");
+      const phone1 = document.getElementById("phone1");
+      const email1 = document.getElementById("email1");
+      //const things=document.getElementsById("things");
+      const nots = document.getElementById("nots");
+      //var checkedValue = document.querySelector('.messageCheckbox:checked');
+      ContactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        validation();
+        if (validation() == true) {
+          ContactForm.style.display = "none";
+          divP.style.display = "none";
+          resultList.style.display = "block";
+          first.textContent = first_name.value;
+          last.textContent = last_name.value;
+          phone1.textContent = exampleInputPhone.value;
+          email1.textContent = exampleInputEmail1.value;
+          //things.textContent=checkedValue.value;
+          nots.textContent = text_area.value;
+          
+          <input type="button" value="Back to Form" />
+          
+        } else {
+          event.preventDefault();
+          validation();
+        }
+      });
+    </script>
+  </body>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid #513337;
+    }
+  </style>
 </html>

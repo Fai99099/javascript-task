@@ -9,78 +9,86 @@ function showHidFun() {
     yButt.textContent = "show info";
   }
 }
-var formLabels = document.getElementsByTagName("label");
-function validation() {
+
+function validation() { 
+ 
+  var FName = document.getElementById("labelFN");
+  var LName = document.getElementById("labelLN");
+  var labelphone = document.getElementById("labelPhone");
+  var labelMail = document.getElementById("labelMail");
+  var labelComments = document.getElementById("labelComments");
+  var likedLabels = document.getElementById("labelLiked");
+  
   var valid = true;
-  var firstname = document.getElementById("first-name").value;
-  var lastname = document.getElementById("last-name").value;
+  var firstname = document.getElementById("first_name").value;
+  var lastname = document.getElementById("last_name").value;
   var phone = document.getElementById("exampleInputPhone").value;
   var email = document.getElementById("exampleInputEmail1").value;
-  var textarea = document.getElementById("text-area").value;
+  var textarea = document.getElementById("text_area").value;
   try {
     if (firstname == "") {
-      formLabels[0].innerHTML = "First Name: * [Required]";
-      formLabels[0].style.color = "red";
+      FName.innerHTML = "First Name: * [Required]";
+      FName.style.color = "red";
       valid = false;
     } else if (!isNaN(firstname)) {
-      formLabels[0].innerHTML = "First Name: * [Text Only]";
-      formLabels[0].style.color = "red";
+      FName.innerHTML = "First Name: * [Text Only]";
+      FName.style.color = "red";
       valid = false;
     } else {
-      formLabels[0].innerHTML = "First Name: [Correct]";
-      formLabels[0].style.color = "green";
+      FName.innerHTML = "First Name: [Correct]";
+      FName.style.color = "green";
       valid = valid ? true : false;
     }
     if (lastname == "") {
-      formLabels[1].innerHTML = "Last Name: * [Required]";
-      formLabels[1].style.color = "red";
+      LName.innerHTML = "Last Name: * [Required]";
+      LName.style.color = "red";
       valid = false;
     } else if (!isNaN(lastname)) {
-      formLabels[1].innerHTML = "Last Name: * [Text Only]";
-      formLabels[1].style.color = "red";
+      LName.innerHTML = "Last Name: * [Text Only]";
+      LName.style.color = "red";
       valid = false;
     } else {
-      formLabels[1].innerHTML = "Last Name: [Correct]";
-      formLabels[1].style.color = "green";
+      LName.innerHTML = "Last Name: [Correct]";
+      LName.style.color = "green";
       valid = valid ? true : false;
     }
     if (phone == "") {
-      formLabels[2].innerHTML = "Phone: * [Required]";
-      formLabels[2].style.color = "red";
+      labelphone.innerHTML = "Phone: * [Required]";
+      labelphone.style.color = "red";
       valid = false;
     } else if (isNaN(phone)) {
-      formLabels[2].innerHTML = "Phone: * [Numbers Only]";
-      formLabels[2].style.color = "red";
+      labelphone.innerHTML = "Phone: * [Numbers Only]";
+      labelphone.style.color = "red";
       valid = false;
     } else {
-      formLabels[2].innerHTML = "Phone: [Correct]";
-      formLabels[2].style.color = "green";
+      labelphone.innerHTML = "Phone: [Correct]";
+      labelphone.style.color = "green";
       valid = valid ? true : false;
     }
     var reg =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email == "") {
-      formLabels[3].innerHTML = "Email: * [Required]";
-      formLabels[3].style.color = "red";
+      labelMail.innerHTML = "Email: * [Required]";
+      labelMail.style.color = "red";
       valid = false;
     } else if (!reg.test(email)) {
       alert("fai");
-      formLabels[3].innerHTML = "Email: * [Incorrect Email]";
-      formLabels[3].style.color = "red";
+      labelMail.innerHTML = "Email: * [Incorrect Email]";
+      labelMail.style.color = "red";
       valid = false;
     } else {
-      formLabels[3].innerHTML = "Email: [Correct]";
-      formLabels[3].style.color = "green";
+      labelMail.innerHTML = "Email: [Correct]";
+      labelMail.style.color = "green";
       valid = valid ? true : false;
     }
     if (textarea == "") {
-      formLabels[5].innerHTML = "Comments: * [Required]";
-      formLabels[5].style.color = "red";
+      labelComments.innerHTML = "Comments: * [Required]";
+      labelComments.style.color = "red";
       valid = false;
     } else {
-      formLabels[5].innerHTML = "Comments: [Done]";
-      formLabels[5].style.color = "green";
+      labelComments.innerHTML = "Comments: [Done]";
+      labelComments.style.color = "green";
       valid = valid ? true : false;
     }
     var radio1 = document.forms["myform"]["Things you liked?"];
@@ -89,20 +97,21 @@ function validation() {
       radio1[1].checked == false &&
       radio1[2].checked == false
     ) {
-      formLabels[4].innerHTML = "Things you liked? * [Required]";
-      formLabels[4].style.color = "red";
+      likedLabels.innerHTML = "Things you liked? * [Required]";
+      likedLabels.style.color = "red";
       valid = false;
     } else {
-      formLabels[4].innerHTML = "Things you liked? [Done]";
-      formLabels[4].style.color = "green";
+      likedLabels.innerHTML = "Things you liked? [Done]";
+      likedLabels.style.color = "green";
       valid = valid ? true : false;
     }
   } catch (err) {
-    alert("The validation unsuccessful: "+err.message);
+    alert("The validation unsuccessful: " + err.message);
   }
   return valid;
 }
 function clear2() {
+  var formLabels = document.getElementsByTagName("label");
   var myLabels = new Array();
   myLabels[0] = "First Name: ";
   myLabels[1] = "Last Name: ";
