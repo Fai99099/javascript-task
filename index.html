@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <script src="javascript.js"></script>
     <link
       rel="stylesheet"
@@ -14,76 +15,36 @@
     <title>jvascript task</title>
   </head>
 
-  <body
-    style="background: rgb(190, 181, 181) no-repeat; background-size: cover"
-  >
+  <body>
     <h5><a name="top"></a></h5>
     <a href="index.html#down">Go to the Down</a>
 
     <hr />
 
-    <h1
-      style="
-        text-align: center;
-        color: rgb(255, 0, 136);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      "
-    >
+    <h1>
       Welcome To My Website
     </h1>
 
     <hr />
-    <div
-      style="
-        width: 350px;
-        padding: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -3%;
-      "
-    >
-      <button id="butt" onclick="showHidFun()" style="vertical-align: top">
+    <div id="div1">
+      <button id="butt" onclick="showHidFun()">
         hide info
       </button>
 
       <div
-        id="showHidDIV"
-        style="
-          width: 100%;
-          padding: 50px;
-          text-align: center;
-          background-color: rgba(250, 174, 174, 0.4);
-          margin-top: -6%;
-        "
-      >
+        id="showHidDIV">
         This site is experimental to use javascript
       </div>
     </div>
     <div
       id="divP"
-      style="
-        width: 400px;
-        background: rgba(71, 68, 68, 0.4);
-        padding: 2px;
-        text-align: center;
-        margin: auto;
-        margin-top: -2%;
-      "
     >
       <p>Please fill out this form to help me improve my site.</p>
     </div>
 
     <div
       id="formDiv"
-      style="
-        width: 450px;
-        background: rgba(137, 126, 126, 0.4);
-        padding: 40px;
-        text-align: center;
-        margin: auto;
-        margin-top: 3%;
-        margin-bottom: 3%;
-      "
+      
     >
       <form method="POST" id="form" name="myform">
         <div class="row">
@@ -135,7 +96,7 @@
 
         <br />
 
-        <div style="align-items: center">
+        <div class="div2">
           <label id="labelLiked">Things you liked?</label><br />
           <input
           class="messageCheckbox"
@@ -157,7 +118,7 @@
           />Ease of use<br /><br />
         </div>
 
-        <div style="align-items: center">
+        <div class="div2">
           <label id="labelComments">Write comments to improve my site:</label
           ><br />
           <textarea
@@ -177,9 +138,9 @@
         <br /><br />
       </form>
 
-      <div id="results" style="display: none">
+      <div id="results">
         <h2>The Result of your Form</h2>
-        <table style="width: 100%">
+        <table >
           <tr>
             <th class="t1">First Name</th>
             <td><span id="first"></span></td>
@@ -205,6 +166,10 @@
             <td><span id="nots"></span></td>
           </tr>
         </table>
+        <br>
+      <div id="divBack">
+  <button onclick="Back();">Back</button>
+</div>  
       </div>
     </div>
 
@@ -212,6 +177,7 @@
     <a href="index.html#top">Go to the Top</a>
 
     <script>
+      const divBack = document.getElementById("divBack");
       const ContactForm = document.getElementById("form");
       const divP = document.getElementById("divP");
       const resultList = document.getElementById("results");
@@ -219,24 +185,30 @@
       const last = document.getElementById("last");
       const phone1 = document.getElementById("phone1");
       const email1 = document.getElementById("email1");
-      //const things=document.getElementsById("things");
+      const things=document.getElementById("things");
       const nots = document.getElementById("nots");
-      //var checkedValue = document.querySelector('.messageCheckbox:checked');
+      var inputElements = document.getElementsByClassName('messageCheckbox');
+      var checkedValue = "";
+       console.log("checkedValue", checkedValue);
       ContactForm.addEventListener("submit", (event) => {
         event.preventDefault();
         validation();
         if (validation() == true) {
+          for (var i = 0; inputElements[i]; ++i) {
+          if (inputElements[i].checked) {
+            checkedValue = checkedValue + ' ' + inputElements[i].value;
+          }
+        }
           ContactForm.style.display = "none";
           divP.style.display = "none";
+          divBack.style.display="block";
           resultList.style.display = "block";
           first.textContent = first_name.value;
           last.textContent = last_name.value;
           phone1.textContent = exampleInputPhone.value;
           email1.textContent = exampleInputEmail1.value;
-          //things.textContent=checkedValue.value;
+          things.textContent=checkedValue;
           nots.textContent = text_area.value;
-          
-          <input type="button" value="Back to Form" />
           
         } else {
           event.preventDefault();
@@ -245,11 +217,4 @@
       });
     </script>
   </body>
-  <style>
-    table,
-    th,
-    td {
-      border: 1px solid #513337;
-    }
-  </style>
 </html>

@@ -9,7 +9,6 @@ function showHidFun() {
     yButt.textContent = "show info";
   }
 }
-
 function validation() { 
  
   var FName = document.getElementById("labelFN");
@@ -124,3 +123,9 @@ function clear2() {
     formLabels[i].style.color = "black";
   }
 }
+
+function Back(){
+  var form=document.getElementById("form");
+  var divResult=document.getElementById("results");
+  divResult.style.display="none"; 
+  form.style.display="block";}
