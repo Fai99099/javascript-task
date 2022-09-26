@@ -3,9 +3,20 @@ body {
   width: 100%;
   height: 100%;
 }
+h1{
+  text-shadow: #513337;
+  font-size: 50px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.divH{
+filter: drop-shadow(8px 8px 10px rgb(115, 115, 115));
+background-image: url(bokeh-background-in-light-tan-rose-1635915.jpg);
+padding: 30px;
+text-shadow: 2px 2px 5px rgb(110, 106, 109);
+}
 h1 {
   text-align: center;
-  color: rgb(255, 0, 136);
+  color: rgb(72, 60, 67);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #div1 {
@@ -22,25 +33,28 @@ h1 {
   width: 100%;
   padding: 50px;
   text-align: center;
-  background-color: rgba(250, 174, 174, 0.4);
+  background-color: rgba(134, 123, 123, 0.4);
   margin-top: -6%;
 }
 #divP {
-  width: 400px;
-  background: rgba(71, 68, 68, 0.4);
+  width: 450px;
+  background: rgba(62, 62, 62, 0.4);
   padding: 2px;
   text-align: center;
   margin: auto;
+  margin-bottom: -3%;
   margin-top: -2%;
 }
 #formDiv {
   width: 450px;
+  height: 750px;
   background: rgba(137, 126, 126, 0.4);
   padding: 40px;
   text-align: center;
   margin: auto;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-bottom: 3%;
+  box-shadow: 5px 5px 8px rgb(110, 106, 109);
 }
 .div2 {
   align-items: center;

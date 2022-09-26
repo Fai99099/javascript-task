@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
     <script src="javascript.js"></script>
     <link
       rel="stylesheet"
@@ -12,10 +11,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css">
     <title>jvascript task</title>
   </head>
 
-  <body>
+  <body><div class="divH">
     <h5><a name="top"></a></h5>
     <a href="index.html#down">Go to the Down</a>
 
@@ -26,6 +26,7 @@
     </h1>
 
     <hr />
+  </div>
     <div id="div1">
       <button id="butt" onclick="showHidFun()">
         hide info
@@ -168,15 +169,17 @@
         </table>
         <br>
       <div id="divBack">
-  <button onclick="Back();">Back</button>
+  <button onclick="Back();document.location.reload(true);">Back to Form</button>
 </div>  
       </div>
     </div>
-
+    <div class="divH">
     <h5><a name="down"></a></h5>
     <a href="index.html#top">Go to the Top</a>
-
+</div>
     <script>
+      const showHidDIV =document.getElementById("div1");
+      const divform=document.getElementById("formDiv");
       const divBack = document.getElementById("divBack");
       const ContactForm = document.getElementById("form");
       const divP = document.getElementById("divP");
@@ -196,13 +199,16 @@
         if (validation() == true) {
           for (var i = 0; inputElements[i]; ++i) {
           if (inputElements[i].checked) {
-            checkedValue = checkedValue + ' ' + inputElements[i].value;
+            checkedValue = checkedValue + '  ' + inputElements[i].value +' , ';
           }
         }
+          showHidDIV.style.display="none";
           ContactForm.style.display = "none";
           divP.style.display = "none";
           divBack.style.display="block";
           resultList.style.display = "block";
+          divform.style.height="350px";
+          divform.style.marginTop="3%";
           first.textContent = first_name.value;
           last.textContent = last_name.value;
           phone1.textContent = exampleInputPhone.value;

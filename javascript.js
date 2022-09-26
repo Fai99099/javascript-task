@@ -126,6 +126,10 @@ function clear2() {
 
 function Back(){
   var form=document.getElementById("form");
+  var showHidDIV=document.getElementById("div1");
   var divResult=document.getElementById("results");
   divResult.style.display="none"; 
-  form.style.display="block";}
+  form.style.display="block";
+  showHidDIV.style.display="block";
+
+}
