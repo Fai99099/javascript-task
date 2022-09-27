@@ -1,23 +1,45 @@
+html{
+  height: 100%;
+  
+}
 body {
   background-color: rgb(190, 181, 181);
   width: 100%;
   height: 100%;
+position: relative;
 }
 h1{
+  color: #faf3f4;
+  text-align: center;
   text-shadow: #513337;
   font-size: 50px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Times New Roman', Times, serif 'Trebuchet MS', sans-serif 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.divH{
+#divDown{
+  position:absolute;
+   left: 50px;
+   bottom: 0px;
+   width: 100%;
+  filter: drop-shadow(8px 8px 10px rgb(115, 115, 115));
+   text-shadow: 2px 2px 5px rgb(110, 106, 109); 
+}
+#image1{
+  width:100%;
+  filter: blur(4px);
+  height: 200px;
+}
+#image2{
+  width:100%;
+  filter: blur(2px);
+  height: 90px;
+}
+#divH{
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  left: 50px;
 filter: drop-shadow(8px 8px 10px rgb(115, 115, 115));
-background-image: url(bokeh-background-in-light-tan-rose-1635915.jpg);
-padding: 30px;
 text-shadow: 2px 2px 5px rgb(110, 106, 109);
-}
-h1 {
-  text-align: center;
-  color: rgb(72, 60, 67);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #div1 {
   width: 350px;
